@@ -1,11 +1,12 @@
 ﻿  main.cpp
   Server.cpp
-D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(139,20): warning C4018: '<': signed/unsigned mismatch
-D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(148,16): warning C4018: '<': signed/unsigned mismatch
-D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(181,20): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Source\Server.cpp(140,20): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Source\Server.cpp(149,16): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Source\Server.cpp(182,20): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(130): warning C4715: 'Server::Update': not all control paths return a value
-  All 902 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Source\Server.cpp(131): warning C4715: 'Server::Update': not all control paths return a value
+  893 of 902 functions (99.0%) were compiled, the rest were copied from previous compilation.
+    9 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  ChatServer.vcxproj -> D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Release\ChatServer.exe
+  ChatServer.vcxproj -> D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Release\ChatServer.exe

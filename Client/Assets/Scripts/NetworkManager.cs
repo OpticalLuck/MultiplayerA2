@@ -14,6 +14,8 @@ public class NetworkManager : Singleton<NetworkManager>
     public event OnServerConnectDelegate OnServerConnectListeners;
     public delegate void OnPacketReceiveDelegate(byte[] data);
     public event OnPacketReceiveDelegate OnPacketReceivedListeners;
+    public delegate void OnDisconnectDelegate();
+    public event OnDisconnectDelegate OnDisconnectListeners;
 
     public static int dataBufferSize = 4096;
     public string IpAddress = "127.0.0.1";
@@ -55,10 +57,12 @@ public class NetworkManager : Singleton<NetworkManager>
     {
         if (IsConnected)
         {
+            UnityMainThreadDispatcher.Instance().Enqueue(DoOnServerDisconnect());
             IsConnected = false;
             tcp.socket.Close();
 
             Debug.Log("Disconnected from server.");
+            
         }
     }
 
@@ -191,6 +195,7 @@ public class NetworkManager : Singleton<NetworkManager>
 
                 Array.Copy(receiveBuffer, _data, _byteLength);
                 ClearBuffer();
+
                 UnityMainThreadDispatcher.Instance().Enqueue(Instance.DoOnPacketReceived(_data));
 
                 stream.BeginRead(receiveBuffer, 0, dataBufferSize, ReceiveCallback, null);
@@ -221,6 +226,15 @@ public class NetworkManager : Singleton<NetworkManager>
         yield break;
     }
 
+    IEnumerator DoOnServerDisconnect()
+    {
+        if (OnDisconnectListeners != null)
+            OnDisconnectListeners.Invoke();
+
+        //tcp.ClearBuffer();
+        yield break;
+    }
+
     protected void OnServerConnect()
     {
         
@@ -228,7 +242,7 @@ public class NetworkManager : Singleton<NetworkManager>
 
     protected void OnPacketReceived(byte[] data)
     {
-        Debug.Log("Received: " + Encoding.UTF8.GetString(data));    
+        Debug.Log("Received: " + Encoding.UTF8.GetString(data));
 
         JObject jobject = JObject.Parse(Encoding.UTF8.GetString(data));
         if (jobject.ContainsKey(LoginData.Prefix))

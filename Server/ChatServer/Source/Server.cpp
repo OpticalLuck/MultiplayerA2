@@ -111,6 +111,7 @@ bool Server::Update()
 			std::stringstream ss;
 			ss << jobj;
 			Send_To_Self(ss.str().c_str(), (int)ClientSocket);
+
 		}
 		else
 		{

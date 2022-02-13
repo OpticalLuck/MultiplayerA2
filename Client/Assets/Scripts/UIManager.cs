@@ -35,14 +35,20 @@ public class UIManager : Singleton<UIManager>
     {
         NetworkManager.Instance.OnServerConnectListeners += OnServerConnect;    
         NetworkManager.Instance.OnPacketReceivedListeners += OnPacketReceived;    
+        NetworkManager.Instance.OnDisconnectListeners += OnServerDisconnect;    
     }
 
     void OnDisable()
     {
         NetworkManager.Instance.OnServerConnectListeners -= OnServerConnect;
         NetworkManager.Instance.OnPacketReceivedListeners -= OnPacketReceived;    
+        NetworkManager.Instance.OnDisconnectListeners -= OnServerDisconnect;    
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
     protected void CreateMessage(string Name, string Message)
     {
         Debug.Log("Creating Message from " + Name);
@@ -127,7 +133,6 @@ public class UIManager : Singleton<UIManager>
             NetworkManager.Instance.SendData(JsonConvert.SerializeObject(command));
 
         }
-
         if (text.StartsWith("/leavelobby"))
         {
             var textarr = text.Split(' ');
@@ -181,6 +186,20 @@ public class UIManager : Singleton<UIManager>
             else
                 NetworkManager.Instance.SendToLobby("¯\\_(ツ)_/¯");
         }
+
+        if (text.StartsWith("/help"))
+        {
+            var textarr = text.Split(' ');
+            if (textarr.Length > 1)
+            {
+                CreateMessage("System", "Wrong Syntax. Try /help");
+                return true;
+            }
+
+            CreateMessage("System", "Lobby Commands: /createlobby, /joinlobby [index e.g. 1], /leavelobby");
+            CreateMessage("System", "Message Commands: /msg [UserID e.g. 231]");
+            CreateMessage("System", "Fun(quite Boring) Commands: /shrug");
+        }
         return true;
     }
 
@@ -192,6 +211,13 @@ public class UIManager : Singleton<UIManager>
         Status.text = "Status: Connected";
     }
 
+    protected void OnServerDisconnect()
+    {
+        StartMenu.SetActive(true);
+        ChatScreen.SetActive(false);
+
+        Status.text = "Status: Disconnected";
+    }
     protected void OnPacketReceived(byte[] data)
     {
         JObject jobject = JObject.Parse(Encoding.UTF8.GetString(data));

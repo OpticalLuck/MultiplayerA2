@@ -1,0 +1,24 @@
+Feature List
+
+Lobby Chat
+All chat(Sends to people not in lobby)
+Direct msg (whisper to one)
+Online User List 
+Lobby List
+
+
+User Guide
+Login with Username
+Chat - have fun
+
+/msg [userid] "msg" - dm someone
+/shrug ¯\_(ツ)_/¯
+/createlobby - create and join lobby
+/joinlobby [index] - join lobby
+/leavelobby - leaves lobby
+
+
+Codes
+
+Server - Mainly in the server.cpp
+Client - UIManager.cs + NetworkManager.cs

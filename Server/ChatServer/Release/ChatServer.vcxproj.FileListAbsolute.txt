@@ -1,1 +1,2 @@
 D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Release\ChatServer.exe
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\Server\ChatServer\Release\ChatServer.exe

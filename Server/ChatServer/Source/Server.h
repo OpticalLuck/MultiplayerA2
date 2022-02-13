@@ -8,7 +8,7 @@
 #include <queue>
 
 
-#define BUFFERSIZE  1024
+#define BUFFERSIZE  1024 * 2
 #define PORT_NUMBER 7890
 #define MAX_LOBBY_ID 10
 #define MAX_USER_PER_LOBBY 10
