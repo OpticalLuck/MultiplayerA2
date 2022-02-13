@@ -1,3 +1,0 @@
-﻿  Server.cpp
-D:\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(119): warning C4715: 'Server::Update': not all control paths return a value
-  ChatServer.vcxproj -> D:\GitHub\MultiplayerA2\ChatServer\x64\Debug\ChatServer.exe

@@ -1,0 +1,11 @@
+﻿  main.cpp
+  Server.cpp
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(139,20): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(148,16): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(181,20): warning C4018: '<': signed/unsigned mismatch
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(130): warning C4715: 'Server::Update': not all control paths return a value
+  All 902 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  ChatServer.vcxproj -> D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Release\ChatServer.exe

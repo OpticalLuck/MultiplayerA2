@@ -1,0 +1,8 @@
+﻿  Server.cpp
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(140,20): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(149,16): warning C4018: '<': signed/unsigned mismatch
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(182,20): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  Generating Code...
+D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Source\Server.cpp(131): warning C4715: 'Server::Update': not all control paths return a value
+  ChatServer.vcxproj -> D:\OpticalLuck\Downloads\GitHub\MultiplayerA2\ChatServer\ChatServer\Debug\ChatServer.exe
